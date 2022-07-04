@@ -33,7 +33,7 @@ public class Oracleconn {
 
 	}
 	
-	Connection getConn(){
+	public Connection getConn(){
 		return conn;
 	}
 	
