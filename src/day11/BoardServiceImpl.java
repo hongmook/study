@@ -30,9 +30,12 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public Board[] serchTitle(String keyword) {
-		Board[] board = new BoardDao().getList();
+		BoardDao key = new BoardDao();
+		Board[] board = key.serchTitle(keyword);
 		
 		return board;
 	}
+	
+
 
 }

@@ -13,10 +13,12 @@ public interface BoardService {
 	
 	//게시물 삭제
 	void deleteBoard(String seqno);
-	
-	//게시물 조회
 
+	//타이틀 검색
 	Board[] serchTitle(String keyword);
+
+	
+	
 	
 	
 	
