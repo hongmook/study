@@ -53,9 +53,21 @@ public class BoardDao {
 	      
 	      } catch (SQLException e) {
 	         e.printStackTrace();
+	      }	finally {
+	    	  closeResource(conn);
 	      }
+	      
 	      return board;
 	   }
+	
+	//자원반납
+	void closeResource(Connection conn) {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	}
 
