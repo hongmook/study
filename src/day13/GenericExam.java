@@ -69,6 +69,17 @@ public class GenericExam<T> {
 		boolean com = Util.compare(p1, p2);
 		
 		System.out.println("두 객체의 비교결과 : "+com);
+		
+		//제한된 타입 파라미터 : <T extends 최상위 타입>
+		//Util.compare("a", "b");
+		//compare 정적메소드는 두 숫자를 빼서 같으면 0 앞에 숫자가 크면 1 뒤에 숫자가 크면 -1
+		int rs = Util.compare(10, 20);
+		System.out.println(rs);
+		
+		int rs2 = Util.compare(4.5, 3);
+		System.out.println(rs2);
+		
+		
 	}
 
 }
