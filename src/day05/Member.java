@@ -43,11 +43,11 @@ public class Member {
 	}
 		
 	//gender
-	void setGender(char c) {
+	public void setGender(char c) {
 		this.gender = c;
 	}
 
-	char getGender() {
+	public char getGender() {
 		return this.gender;
 	}
 }
