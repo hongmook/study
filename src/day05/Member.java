@@ -25,16 +25,16 @@ public class Member {
 //		  return 값;
 // 	  }
 
-	void setId(String id){ //void : 리턴타입이 없다 /id --> 스택영역
+	public void setId(String id){ //void : 리턴타입이 없다 /id --> 스택영역
 		this.id = id; //this : 자기자신의 클래스에 있는 필드를 선언할때
 	}
 	
-	String getId(){ // id를 불러오는 선언문?
+	public String getId(){ // id를 불러오는 선언문?
 		return this.id;
 	}
 	
 	//로그인 기능 정의 // == , = 차이 주의 ??
-	boolean login(String id, String pw){
+	public boolean login(String id, String pw){
 		if(this.id == id && this.pw == pw) {
 			return true;
 		} else {
