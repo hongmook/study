@@ -1,14 +1,16 @@
 package day05;
 
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable {
 	//필드 : 데이터 --- class 안에서 선언하는것은 필드가 됨 /id --> 힙영역
-	String id;
-	String pw;
-	String name;
-	char gender;
-	int age;
-	String[] hobby;
-	String wdate;
+	private String id;
+	private String pw;
+	private String name;
+	private char gender;
+	private int age;
+	private transient String[] hobby; //transient는 직렬화 제외
+	private static String wdate; //static는 직렬화 제외
 	
 	//default 생성자 : 메모리 적재 --- class 이름과 같음, 생략되어있음
 	public Member(){
@@ -49,5 +51,13 @@ public class Member {
 
 	public char getGender() {
 		return this.gender;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return this.age;
 	}
 }
