@@ -1,27 +1,29 @@
 package day13;
 
-public class Student extends Person {
+import java.io.Serializable;
+
+public class Student extends Person implements Serializable {
 
 	private String school;
 
-	Student() {
+	public Student() {
 
 	}
 	
-	Student(String school, String name){
+	public Student(String school, String name){
 		super(name);
 		this.school = school;
 	}
 	
-	Student(String name){
+	public Student(String name){
 		super(name);
 	}
 	
-	Student(String name, int age) {
+	public Student(String name, int age) {
 		super(name, age);
 	}
 	
-	Student(String school,String name, int age){
+	public Student(String school,String name, int age){
 		super(name, age);
 		this.school = school;
 	}

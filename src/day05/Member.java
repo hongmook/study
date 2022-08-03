@@ -3,6 +3,9 @@ package day05;
 import java.io.Serializable;
 
 public class Member implements Serializable {
+	//부모클래스 직렬화, 자식클래스 직렬화 X ==> 자동 직렬화
+	//부모클래스 직렬화X, 자식클래스 직렬화 ==> 부모는 직렬화 X
+	static final long serialVersionUID = 1;
 	//필드 : 데이터 --- class 안에서 선언하는것은 필드가 됨 /id --> 힙영역
 	private String id;
 	private String pw;
@@ -52,7 +55,7 @@ public class Member implements Serializable {
 	public char getGender() {
 		return this.gender;
 	}
-	
+
 	public void setAge(int age) {
 		this.age = age;
 	}

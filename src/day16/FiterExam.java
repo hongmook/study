@@ -12,6 +12,8 @@ import java.io.Reader;
 import java.io.Serializable;
 
 import day05.Member;
+import day13.Person;
+import day13.Student;
 
 public class FiterExam {
 	
@@ -72,8 +74,8 @@ public class FiterExam {
 		dis.close();
 		fis.close();
 		
+		//객체입출력 보조스트림
 		fos = new FileOutputStream("d:/KHM/upload/object.dat");
-		
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		
 		
@@ -82,7 +84,7 @@ public class FiterExam {
 		member.setAge(10);
 		member.setGender('F');
 		member.setId("joy");
-		
+
 		oos.writeObject(member); 
 		oos.writeObject(new String("홍길동"));
 		oos.writeObject(new int[] {1,2,3});
@@ -107,7 +109,26 @@ public class FiterExam {
 		System.out.println(i[0] + ", " + i[1] + ", " + i[2]);
 		System.out.println(d);
 		
+		ois.close();
+		fis.close();
 		
+		//부모클래스 직렬화, 자식클래스 직렬화 X ==> 자동 직렬화
+		//부모클래스 직렬화X, 자식클래스 직렬화 ==> 부모는 직렬화 X
 		
+		fos = new FileOutputStream("d:/KHM/upload/member.dat");
+		oos = new ObjectOutputStream(fos);
+		
+		Student student = new Student();
+		student.setName("홍길동");
+		student.setSchool("초등");
+		student.age=100;
+		oos.writeObject(student);
+
+		fis = new FileInputStream("d:/KHM/upload/member.dat");
+		ois = new ObjectInputStream(fis);
+		
+		Student obj1 = (Student)ois.readObject();
+		System.out.println(obj1.getSchool());
+		System.out.println(obj1.age);
 	}
 }

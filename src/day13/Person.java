@@ -1,18 +1,19 @@
 package day13;
 
+
 public class Person {
 	private String name;
-	private int age;
+	public int age;
 	
-	Person(){
+	public Person(){
 		
 	}
 	
-	Person(String name){
+	public Person(String name){
 		this.name = name;
 	}
 	
-	Person(String name, int age) {
+	public Person(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
