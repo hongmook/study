@@ -36,5 +36,4 @@ public class Student extends Person implements Serializable {
 	public void setSchool(String school) {
 		this.school = school;
 	}
-	
 }
