@@ -15,14 +15,14 @@ public class ClientExam {
 		System.out.println("[연결요청]");
 		try {
 			
-			socket.connect(new InetSocketAddress("192.168.10.238", 9999));
+			socket.connect(new InetSocketAddress("192.168.10.242", 9999));
 			System.out.println("[연결성공]");
 			
 			byte[] bytes = null;
 			String message = null;
 			
 			OutputStream os = socket.getOutputStream();
-			message = "배고파요";
+			message = "정우형 무형이형 나 이렇게 3명이구만";
 			bytes = message.getBytes("UTF-8");
 			os.write(bytes);
 			os.flush();
