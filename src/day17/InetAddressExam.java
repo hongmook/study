@@ -9,11 +9,11 @@ public class InetAddressExam {
 		
 		try {
 			InetAddress local = InetAddress.getLocalHost();
-			System.out.println("郴哪腔磐 IP林家 : " + local.getHostAddress());
+			System.out.println("氚涬姅 IP欤检唽 : " + local.getHostAddress());
 			
 			InetAddress[] iaArr = InetAddress.getAllByName("www.naver.com");
 			for(InetAddress remote : iaArr) {
-				System.out.println("www.naver.com IP林家" + remote.getHostAddress());	
+				System.out.println("www.naver.com IP :" + remote.getHostAddress());	
 			}
 		} catch (UnknownHostException e) {
 			e.printStackTrace();

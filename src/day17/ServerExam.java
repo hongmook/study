@@ -17,11 +17,11 @@ public class ServerExam {
 			serverSocket = new ServerSocket();
 			serverSocket.bind(new InetSocketAddress("192.168.10.135", 9999));
 			while(true) {
-				System.out.println("[¿¬°á ±â´Ù¸²]");
-				Socket socket = serverSocket.accept(); //Å¬¶óÀÌ¾ğÆ® ¿¬°á ¼ö¶ô
+				System.out.println("[ì—°ê²° ê¸°ë‹¤ë¦¼]");
+				Socket socket = serverSocket.accept(); //í´ë¼ì´ì–¸íŠ¸ ì—°ê²° ìˆ˜ë½
 				InetSocketAddress isa = (InetSocketAddress)socket.getRemoteSocketAddress();
 				
-				System.out.println("[¿¬°á ¼ö¶ôÇÔ]" + isa.getAddress());
+				System.out.println("[ì—°ê²° ìˆ˜ë½í•¨]" + isa.getAddress());
 				
 				byte[] bytes = null;
 				String message = null;
@@ -31,14 +31,14 @@ public class ServerExam {
 				int readByteCount = is.read(bytes);
 				
 				message = new String(bytes, 0, readByteCount, "UTF-8");
-				System.out.println("[¹ŞÀº ¸Ş¼¼Áö] : " + message);
+				System.out.println("[ë°›ì€ ë©”ì„¸ì§€] : " + message);
 				
 				OutputStream os = socket.getOutputStream();
-				message = "¾È³ç Å¬¶óÀÌ¾ğÆ®";
+				message = "ì•ˆë…• í´ë¼ì´ì–¸íŠ¸";
 				bytes = message.getBytes("UTF-8");
 				os.write(bytes);
 				os.flush();
-				System.out.println("[Å¬¶óÀÌ¾ğÆ®·Î ¸Ş¼¼Áö Àü¼Û ¿Ï·á]");
+				System.out.println("[í´ë¼ì´ì–¸íŠ¸ë¡œ ë©”ì„¸ì§€ ì „ì†¡ ì™„ë£Œ]");
 				
 				is.close();
 				os.close();

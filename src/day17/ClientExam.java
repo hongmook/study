@@ -12,29 +12,29 @@ public class ClientExam {
 		Socket socket = null;
 		socket = new Socket();
 		
-		System.out.println("[¿¬°á¿äÃ»]");
+		System.out.println("[ì—°ê²°ìš”ì²­]");
 		try {
 			
 			socket.connect(new InetSocketAddress("192.168.10.242", 9999));
-			System.out.println("[¿¬°á¼º°ø]");
+			System.out.println("[ì—°ê²°ì„±ê³µ]");
 			
 			byte[] bytes = null;
 			String message = null;
 			
 			OutputStream os = socket.getOutputStream();
-			message = "Á¤¿ìÇü ¹«ÇüÀÌÇü ³ª ÀÌ·¸°Ô 3¸íÀÌ±¸¸¸";
+			message = "ì •ìš°í˜• ë¬´í˜•ì´í˜• ë‚˜ ì´ë ‡ê²Œ 3ëª…ì´êµ¬ë§Œ";
 			bytes = message.getBytes("UTF-8");
 			os.write(bytes);
 			os.flush();
 			
-			System.out.println("[µ¥ÀÌÅÍ Àü¼Û ¿Ï·á]");
+			System.out.println("[ë°ì´í„° ì „ì†¡ ì™„ë£Œ]");
 			
 			InputStream is = socket.getInputStream();
 			bytes = new byte[100];
 			int readByteCount = is.read(bytes);
 			message = new String(bytes, 0, readByteCount, "UTF-8");
 			
-			System.out.println("[¼­¹ö·ÎºÎÅÍ µ¥ÀÌÅÍ ¹Ş±â ¿Ï·á]" + message);
+			System.out.println("[ì„œë²„ë¡œë¶€í„° ë°ì´í„° ë°›ê¸° ì™„ë£Œ]" + message);
 			
 			os.close();
 			is.close();
